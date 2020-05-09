@@ -5,8 +5,8 @@ services:
       #构建容器
       build: ./frontend
       # 需要链接本地代码时
-      # volumes:
-      #   - ./frontend:/usr/src/app
+      volumes:
+        - ./frontend:/usr/src/app
  
   nginx:
     restart: always
@@ -15,4 +15,4 @@ services:
       - 3000:80
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d
- 
+      - ./frontend/dist/:/var/www/html/
