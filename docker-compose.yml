@@ -8,4 +8,4 @@ services:
       - 3000:80
     volumes:
       - ./nginx/conf.d/:/etc/nginx/conf.d
-      - ./frontend/dist/:/var/www/html/
+      - ./dist/:/var/www/html/
