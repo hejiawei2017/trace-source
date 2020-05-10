@@ -5,4 +5,4 @@ RUN npm config set registry https://registry.npm.taobao.org
 RUN npm install -g @vue/cli 
 RUN npm install 
 RUN npm run build
-COPY --from=builder /usr/src/app/dist /frontend/dist
+CMD['docker cp builder:/usr/src/app/dist /frontend/dist']
